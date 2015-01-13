@@ -43,6 +43,7 @@ UILabel *producerName;
 NSString *tempProName;
 UILabel *artistLabel;
 UILabel *trackLabel;
+UIImageView *trackImg;
 
 - (void)viewDidLoad {
     
@@ -62,12 +63,12 @@ UILabel *trackLabel;
     [self.view addSubview:producerAvatar];
     
     screenSizeRight =  self.view.bounds.size.width - 60.0;
-     [self intializeNowPlayingTrack];
     
     playBtn.layer.cornerRadius = 35;
     playBtn.clipsToBounds = YES;
     
     if ([self checkForWIFIConnection]) {
+        [self intializeNowPlayingTrack];
         UIActivityIndicatorView *waitForLoadingIndicator = [[UIActivityIndicatorView alloc]initWithFrame:CGRectMake(self.view.center.x, self.view.center.y, 20.0, 20.0)];
         waitForLoadingIndicator.hidesWhenStopped = YES;
         [waitForLoadingIndicator setActivityIndicatorViewStyle:UIActivityIndicatorViewStyleWhiteLarge];
@@ -103,8 +104,12 @@ UILabel *trackLabel;
     [self loadTrackDetails];
         [waitForLoadingIndicator stopAnimating];
     } else {
+    
+        NSLog(@"seems to be offline");
+    }
     artistLabel = [[UILabel alloc]initWithFrame:CGRectMake(170, 280, 120, 20)];
     [artistLabel setTextColor:[UIColor whiteColor]];
+    artistLabel.numberOfLines = 3;
     artistLabel.font = [UIFont fontWithName:@"Futura" size:7.0];
     [artistLabel setTextAlignment:NSTextAlignmentRight];
     [self.view addSubview:artistLabel];
@@ -116,10 +121,10 @@ UILabel *trackLabel;
     trackLabel.font = [UIFont fontWithName:@"Futura" size:13.0];
     [self.view addSubview:trackLabel];
     
-    UIImageView *imgView = [[UIImageView alloc]initWithFrame:CGRectMake(240, 210, 60, 60)];
-    imgView.image = [UIImage imageNamed:@"pepperFlowerApps.png"];
-    [self.view addSubview:imgView];
-    }
+    trackImg = [[UIImageView alloc]initWithFrame:CGRectMake(230, 210, 60, 60)];
+    //trackImg.image =  [UIImage imageNamed:@"pepperFlowerApps.png"];
+    [self.view addSubview:trackImg];
+    
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -215,14 +220,15 @@ UILabel *trackLabel;
     [trackIndicator startAnimating];
     PPRTrackInfo *trackInfo = [[PPRTrackInfo alloc]init];
     [trackInfo showTrackInfoIsPlaying:mutDict success:^(id jsonObject) {
-        
+        NSLog(@"json object :: %@",jsonObject);
                artistLabel.text = [jsonObject valueForKey:@"artist"];
         trackLabel.text = [jsonObject valueForKey:@"title"];
-                NSString *artistNow = [jsonObject valueForKey:@"artist"];
-                NSString *titleNow = [jsonObject valueForKey:@"title"];
-                [mutDict setObject:artistNow forKey:@"artist"];
-                [mutDict setObject:titleNow forKey:@"title"];
-    
+        trackImg.image = [PPRTrackInfo cdImage];
+       //         NSString *artistNow = [jsonObject valueForKey:@"artist"];
+       //         NSString *titleNow = [jsonObject valueForKey:@"title"];
+       //         [mutDict setObject:artistNow forKey:@"artist"];
+       //         [mutDict setObject:titleNow forKey:@"title"];
+       // [mutDict setObject:trackImg.image forKey:@"image"];
         [trackIndicator stopAnimating];
     } failure:^(NSError *error) {
         NSLog(@"failure or WHAT???");
