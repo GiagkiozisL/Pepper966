@@ -39,7 +39,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Oy0-Yx-4wT">
                                 <rect key="frame" x="490" y="252" width="75" height="75"/>
                             </imageView>
-                            <view contentMode="scaleAspectFit" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qbM-nH-c0s">
+                            <view contentMode="scaleAspectFit" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qbM-nH-c0s">
                                 <rect key="frame" x="0.0" y="200" width="1000" height="86"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ON AIR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Ty-g6-Ort">
@@ -131,11 +131,13 @@
             </objects>
             <point key="canvasLocation" x="796" y="558"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--playlist-->
         <scene sceneID="PVY-h3-1nF">
             <objects>
                 <navigationController id="nGZ-eH-og7" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="mostRecent" id="L5g-Kr-lWu"/>
+                    <tabBarItem key="tabBarItem" title="playlist" image="trackhistory.png" id="L5g-Kr-lWu">
+                        <inset key="imageInsets" minX="0.0" minY="1" maxX="0.0" maxY="0.0"/>
+                    </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="m3A-dK-Hty">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -201,6 +203,7 @@
         <image name="microphone.png" width="20" height="20"/>
         <image name="playBtn.png" width="70" height="70"/>
         <image name="scheduleBadge.png" width="30" height="30"/>
+        <image name="trackhistory.png" width="30" height="30"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

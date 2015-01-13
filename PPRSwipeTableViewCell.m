@@ -277,6 +277,7 @@
         NSIndexPath *cellIndexPath = [self.containingTableView indexPathForCell:self];
         
         shouldHighlight = [self.containingTableView.delegate tableView:self.containingTableView shouldHighlightRowAtIndexPath:cellIndexPath];
+        NSLog(@"higlight path row??? :%@",cellIndexPath);
     }
     
     return shouldHighlight;
@@ -324,9 +325,11 @@
 
 - (void)selectCell
 {
+
+    NSIndexPath *cellIndexPath;
     if (_cellState == kCellStateCenter)
     {
-        NSIndexPath *cellIndexPath = [self.containingTableView indexPathForCell:self];
+        cellIndexPath = [self.containingTableView indexPathForCell:self];
         
         if ([self.containingTableView.delegate respondsToSelector:@selector(tableView:willSelectRowAtIndexPath:)])
         {
@@ -384,9 +387,12 @@
 {
     SWUtilityButtonTapGestureRecognizer *utilityButtonTapGestureRecognizer = (SWUtilityButtonTapGestureRecognizer *)sender;
     NSUInteger utilityButtonIndex = utilityButtonTapGestureRecognizer.buttonIndex;
+    
     if ([self.delegate respondsToSelector:@selector(swipeableTableViewCell:didTriggerLeftUtilityButtonWithIndex:)])
     {
-        [self.delegate swipeableTableViewCell:self didTriggerLeftUtilityButtonWithIndex:utilityButtonIndex];
+
+        [self.delegate swipeableTableViewCell:self
+         didTriggerLeftUtilityButtonWithIndex:utilityButtonIndex];
     }
 }
 
@@ -402,7 +408,6 @@
         }
     }
 }
-
 
 #pragma mark - Geometry helpers
 

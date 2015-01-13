@@ -78,6 +78,29 @@ NSArray *reversedTitleArray;
 
 }
 
+- (void)fbLogin {
+    if (FBSession.activeSession.isOpen) {
+        NSLog(@"is logged in already");
+    } else {
+    FBLoginView *loginView = [[FBLoginView alloc]init];
+    loginView.delegate = self;
+    
+    }
+    
+    if([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook]) {
+        SLComposeViewController *controller = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
+        
+        [controller setInitialText:[NSString stringWithFormat:@"%@ - %@",tempArtist, tempTitle]];
+      //  [controller addImage:imageTemp];
+        
+        [self presentViewController:controller animated:YES completion:Nil];
+    } else {
+        NSLog(@"unavailable!");
+    }
+
+    
+}
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -126,6 +149,10 @@ NSArray *reversedTitleArray;
     NSMutableArray *leftUtilityButtons = [NSMutableArray new];
     NSMutableArray *rightUtilityButtons = [NSMutableArray new];
     
+    UISwipeGestureRecognizer *swipeRecognixer = [[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(cellSwiped:)];
+    [swipeRecognixer setDirection:UISwipeGestureRecognizerDirectionRight];
+    [cell addGestureRecognizer:swipeRecognixer];
+    
     [leftUtilityButtons sw_addUtilityButtonWithColor:
      [UIColor colorWithRed:1.0f green:1.0f blue:0.35f alpha:0.7]
                                                 icon:[UIImage imageNamed:@"like.png"]];
@@ -138,16 +165,8 @@ NSArray *reversedTitleArray;
     [leftUtilityButtons sw_addUtilityButtonWithColor:
      [UIColor colorWithRed:1.0f green:1.0f blue:0.35f alpha:0.7]
                                                 icon:[UIImage imageNamed:@"twitter.png"]];
-    
-//    [rightUtilityButtons sw_addUtilityButtonWithColor:
-//     [UIColor colorWithRed:0.78f green:0.78f blue:0.8f alpha:1.0]
-//                                                title:@"More"];
-//    [rightUtilityButtons sw_addUtilityButtonWithColor:
-//     [UIColor colorWithRed:1.0f green:0.231f blue:0.188 alpha:1.0f]
-//                                                title:@"Delete"];
-    
+
     cell.leftUtilityButtons = leftUtilityButtons;
-//    cell.rightUtilityButtons = rightUtilityButtons;
     cell.delegate = self;
     
     cell.trackArtist.text = [reversedArtistArray objectAtIndex:indexPath.row];
@@ -160,18 +179,20 @@ NSArray *reversedTitleArray;
     return 100.0;
 }
 
-//- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-//    if (editingStyle == UITableViewCellEditingStyleDelete) {
-//        // Delete the row from the data source
-//        
-//    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-//        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-//    }   
-//}
+- (void)cellSwiped:(UIGestureRecognizer *)gestureRecognizer {
+
+    if (gestureRecognizer.state == UIGestureRecognizerStateEnded) {
+        UITableViewCell *cell = (UITableViewCell *)gestureRecognizer.view;
+        NSIndexPath* indexPath = [self.tableView indexPathForCell:cell];
+        NSLog(@"give me index path %@",indexPath);
+    }
+}
 
 #pragma mark - SWTableViewCellDelegate
 
-- (void)swipeableTableViewCell:(PPRSwipeTableViewCell *)cell didTriggerLeftUtilityButtonWithIndex:(NSInteger)index {
+- (void)swipeableTableViewCell:(PPRSwipeTableViewCell *)cell
+                        didTriggerLeftUtilityButtonWithIndex:(NSInteger)index
+                  forIndexPath:(NSInteger)rowIndex {
     
    
     switch (index) {
@@ -198,14 +219,19 @@ NSArray *reversedTitleArray;
         }
             case 2:
         {
-            UIAlertView *fbAlert = [[UIAlertView alloc ]initWithTitle:@"Fb!!"
-        message:@"post it to fb!"
-        delegate:self
-        cancelButtonTitle:@"OK OK"
-                                                    otherButtonTitles: nil];
-            [fbAlert show];
-            break;
-        }
+           // NSString *selectedArtist = [reversedArtistArray objectAtIndex:indexPath.row];
+            NSLog(@"selected artst %d", rowIndex);
+            [self fbLogin];
+//            UIAlertView *fbAlert = [[UIAlertView alloc ]initWithTitle:@"Fb!!"
+//        message:@"post it to fb!"
+//        delegate:self
+//        cancelButtonTitle:@"OK OK"
+//                                                    otherButtonTitles: nil];
+//            [fbAlert show];
+            
+                break;
+                
+            }
             case 3:
         {
             UIAlertView *twitterAlert = [[UIAlertView alloc]initWithTitle:@"TWITTER"
@@ -219,6 +245,15 @@ NSArray *reversedTitleArray;
         default:
             break;
     }
+}
+
+#pragma mark - FBLoginViewDelegate
+
+- (void)loginViewFetchedUserInfo:(FBLoginView *)loginView
+                            user:(id<FBGraphUser>)user {
+    NSLog(@"FB LOGGED IN SUCCESSFULLY WITH NAME ID : %@",user.name);
+//    self.profilePictureView.profileID = user.id;
+ //   self.nameLabel.text = user.name;
 }
 
 @end

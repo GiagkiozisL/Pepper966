@@ -29,6 +29,9 @@
 		451C1D4A1A65264E007F75D5 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 451C1D481A65264E007F75D5 /* Icon.png */; };
 		451C1D4B1A65264E007F75D5 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 451C1D491A65264E007F75D5 /* Icon@2x.png */; };
 		451C1D4E1A6527BD007F75D5 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 451C1D4D1A6527BD007F75D5 /* Reachability.m */; };
+		451C1D511A6546A4007F75D5 /* trackhistory.png in Resources */ = {isa = PBXBuildFile; fileRef = 451C1D4F1A6546A4007F75D5 /* trackhistory.png */; };
+		451C1D521A6546A4007F75D5 /* trackhistory@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 451C1D501A6546A4007F75D5 /* trackhistory@2x.png */; };
+		451C1D571A655817007F75D5 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 451C1D561A655817007F75D5 /* Social.framework */; };
 		4567149B1A516CB900890C1E /* pauseBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 456714971A516CB900890C1E /* pauseBtn.png */; };
 		4567149C1A516CB900890C1E /* pauseBtn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 456714981A516CB900890C1E /* pauseBtn@2x.png */; };
 		4567149D1A516CB900890C1E /* playBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 456714991A516CB900890C1E /* playBtn.png */; };
@@ -134,6 +137,9 @@
 		451C1D491A65264E007F75D5 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		451C1D4C1A6527BD007F75D5 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		451C1D4D1A6527BD007F75D5 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		451C1D4F1A6546A4007F75D5 /* trackhistory.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = trackhistory.png; sourceTree = "<group>"; };
+		451C1D501A6546A4007F75D5 /* trackhistory@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "trackhistory@2x.png"; sourceTree = "<group>"; };
+		451C1D561A655817007F75D5 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		456714971A516CB900890C1E /* pauseBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pauseBtn.png; sourceTree = "<group>"; };
 		456714981A516CB900890C1E /* pauseBtn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pauseBtn@2x.png"; sourceTree = "<group>"; };
 		456714991A516CB900890C1E /* playBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = playBtn.png; sourceTree = "<group>"; };
@@ -240,6 +246,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				451C1D571A655817007F75D5 /* Social.framework in Frameworks */,
 				45C64F411A4A12B8000A55A6 /* UIKit.framework in Frameworks */,
 				45C64F4A1A4A1944000A55A6 /* libxml2.dylib in Frameworks */,
 				45C64F451A4A167C000A55A6 /* Foundation.framework in Frameworks */,
@@ -282,6 +289,7 @@
 		451C1B561A6511B7007F75D5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				451C1D561A655817007F75D5 /* Social.framework */,
 				451C1D361A651495007F75D5 /* Bolts.framework */,
 				451C1D371A651495007F75D5 /* FacebookSDK.framework */,
 				451C1D381A651495007F75D5 /* FBAudienceNetwork.framework */,
@@ -297,6 +305,8 @@
 		456714961A516C9F00890C1E /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				451C1D4F1A6546A4007F75D5 /* trackhistory.png */,
+				451C1D501A6546A4007F75D5 /* trackhistory@2x.png */,
 				451C1D481A65264E007F75D5 /* Icon.png */,
 				451C1D491A65264E007F75D5 /* Icon@2x.png */,
 				451C1D441A651F9A007F75D5 /* Icon-Spotlight.png */,
@@ -602,8 +612,10 @@
 				45CF6A8C1A5EA24C00C06015 /* scheduleBadge.png in Resources */,
 				4567149D1A516CB900890C1E /* playBtn.png in Resources */,
 				451C1D421A651E63007F75D5 /* Icon-Small.png in Resources */,
+				451C1D511A6546A4007F75D5 /* trackhistory.png in Resources */,
 				45CF6A7B1A5E922300C06015 /* liveBadge.png in Resources */,
 				45C64ECF1A4977AE000A55A6 /* Main.storyboard in Resources */,
+				451C1D521A6546A4007F75D5 /* trackhistory@2x.png in Resources */,
 				451C1D431A651E63007F75D5 /* Icon-Small@2x.png in Resources */,
 				45CF6AAA1A5EF8DC00C06015 /* PPRTrackViewCell.xib in Resources */,
 				456714B11A52BD0000890C1E /* pepperFlower.png in Resources */,

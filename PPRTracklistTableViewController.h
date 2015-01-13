@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "PPRSwipeTableViewCell.h"
+#import <FacebookSDK/FacebookSDK.h>
+#import <Social/Social.h>
 
-@interface PPRTracklistTableViewController : UITableViewController <UITableViewDataSource,UITableViewDelegate,SWTableViewCellDelegate>
+@interface PPRTracklistTableViewController : UITableViewController <UITableViewDataSource,UITableViewDelegate,SWTableViewCellDelegate,FBLoginViewDelegate>
 
 @end

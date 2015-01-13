@@ -101,7 +101,6 @@ UIImageView *trackImg;
         
     }
     
-    [self loadTrackDetails];
         [waitForLoadingIndicator stopAnimating];
     } else {
     
@@ -234,28 +233,6 @@ UIImageView *trackImg;
         NSLog(@"failure or WHAT???");
     }];
   
-}
-/*
-- (void)showPreviousTracks:(id)sender {
-    
-    NSURL *url = [NSURL URLWithString:HistoryUrl];
-    NSURLRequest *request = [NSURLRequest requestWithURL:url];
-    AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
-    operation.responseSerializer = [AFJSONResponseSerializer serializer];
-    
-    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
- 
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"error whigle retrieving history data : %@",[error description]);
-    }];
-    
-    [operation start];
-}
-*/
- 
-- (void)loadTrackDetails {
- 
-    cdAlbumImg.image = [PPRTrackInfo cdImage];
 }
 
 @end
