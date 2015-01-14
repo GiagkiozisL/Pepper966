@@ -9,6 +9,7 @@
 #import "PPRTracklistTableViewController.h"
 #import "PPRTrackViewCell.h"
 #import "PPRTracklistParser.h"
+#import "FavoritesStore.h"
 
 @interface PPRTracklistTableViewController ()
 
@@ -22,6 +23,9 @@ NSArray *tempArtist;
 NSArray *tempTitle;
 NSArray *reversedArtistArray;
 NSArray *reversedTitleArray;
+NSString *selectedSong;
+NSString *selectedArtist;
+NSString *selectedTrack;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -149,10 +153,6 @@ NSArray *reversedTitleArray;
     NSMutableArray *leftUtilityButtons = [NSMutableArray new];
     NSMutableArray *rightUtilityButtons = [NSMutableArray new];
     
-    UISwipeGestureRecognizer *swipeRecognixer = [[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(cellSwiped:)];
-    [swipeRecognixer setDirection:UISwipeGestureRecognizerDirectionRight];
-    [cell addGestureRecognizer:swipeRecognixer];
-    
     [leftUtilityButtons sw_addUtilityButtonWithColor:
      [UIColor colorWithRed:1.0f green:1.0f blue:0.35f alpha:0.7]
                                                 icon:[UIImage imageNamed:@"like.png"]];
@@ -179,27 +179,34 @@ NSArray *reversedTitleArray;
     return 100.0;
 }
 
-- (void)cellSwiped:(UIGestureRecognizer *)gestureRecognizer {
-
-    if (gestureRecognizer.state == UIGestureRecognizerStateEnded) {
-        UITableViewCell *cell = (UITableViewCell *)gestureRecognizer.view;
-        NSIndexPath* indexPath = [self.tableView indexPathForCell:cell];
-        NSLog(@"give me index path %@",indexPath);
-    }
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+   
+    selectedSong = [NSString stringWithFormat:@"%@ - %@",[reversedArtistArray objectAtIndex:indexPath.row],[reversedTitleArray objectAtIndex:indexPath.row]];
+    selectedArtist = [NSString stringWithFormat:@"%@",[reversedArtistArray objectAtIndex:indexPath.row]];
+    selectedTrack = [NSString stringWithFormat:@"%@",[reversedTitleArray objectAtIndex:indexPath.row]];
+    NSLog(@"selected song: %@",selectedSong);
 }
 
 #pragma mark - SWTableViewCellDelegate
 
 - (void)swipeableTableViewCell:(PPRSwipeTableViewCell *)cell
-                        didTriggerLeftUtilityButtonWithIndex:(NSInteger)index
-                  forIndexPath:(NSInteger)rowIndex {
+                        didTriggerLeftUtilityButtonWithIndex:(NSInteger)index  {
     
    
     switch (index) {
         case 0:
         {
-          UIAlertView *likedAlert = [[UIAlertView alloc]initWithTitle:@"Core Data reminder!"
-        message:@"must add song to favorites!"
+            
+            Favorites *newFaver = [[FavoritesStore sharedStore] createItem];
+            
+            newFaver.artist = selectedArtist;
+            newFaver.track = selectedTrack;
+            newFaver.dateCreated = [NSDate date];
+            
+            
+            
+          UIAlertView *likedAlert = [[UIAlertView alloc]initWithTitle:@"Favorites reminder!"
+        message:@"saved to fav!"
         delegate:self
         cancelButtonTitle:@"OK"
         otherButtonTitles: nil];
@@ -219,18 +226,9 @@ NSArray *reversedTitleArray;
         }
             case 2:
         {
-           // NSString *selectedArtist = [reversedArtistArray objectAtIndex:indexPath.row];
-            NSLog(@"selected artst %d", rowIndex);
-            [self fbLogin];
-//            UIAlertView *fbAlert = [[UIAlertView alloc ]initWithTitle:@"Fb!!"
-//        message:@"post it to fb!"
-//        delegate:self
-//        cancelButtonTitle:@"OK OK"
-//                                                    otherButtonTitles: nil];
-//            [fbAlert show];
             
+            [self fbLogin];
                 break;
-                
             }
             case 3:
         {
@@ -252,8 +250,6 @@ NSArray *reversedTitleArray;
 - (void)loginViewFetchedUserInfo:(FBLoginView *)loginView
                             user:(id<FBGraphUser>)user {
     NSLog(@"FB LOGGED IN SUCCESSFULLY WITH NAME ID : %@",user.name);
-//    self.profilePictureView.profileID = user.id;
- //   self.nameLabel.text = user.name;
 }
 
 @end

@@ -45,6 +45,14 @@
 		456714B11A52BD0000890C1E /* pepperFlower.png in Resources */ = {isa = PBXBuildFile; fileRef = 456714B01A52BD0000890C1E /* pepperFlower.png */; };
 		458DE6A41A55FBB400280C93 /* example1.png in Resources */ = {isa = PBXBuildFile; fileRef = 458DE6A21A55FBB400280C93 /* example1.png */; };
 		458DE6A51A55FBB400280C93 /* example2.png in Resources */ = {isa = PBXBuildFile; fileRef = 458DE6A31A55FBB400280C93 /* example2.png */; };
+		45A0DA3B1A66A371000B45E9 /* Pepper966.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 45A0DA391A66A371000B45E9 /* Pepper966.xcdatamodeld */; };
+		45A0DA3E1A66A403000B45E9 /* Favorites.m in Sources */ = {isa = PBXBuildFile; fileRef = 45A0DA3D1A66A403000B45E9 /* Favorites.m */; };
+		45A0DA401A66A446000B45E9 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45A0DA3F1A66A446000B45E9 /* CoreData.framework */; };
+		45A0DA431A66A69D000B45E9 /* FavoritesStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 45A0DA421A66A69D000B45E9 /* FavoritesStore.m */; };
+		45A0DA461A66B059000B45E9 /* PPRFavoritesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45A0DA451A66B059000B45E9 /* PPRFavoritesTableViewController.m */; };
+		45A0DA4A1A66B165000B45E9 /* PPRFavoritesViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 45A0DA481A66B165000B45E9 /* PPRFavoritesViewCell.m */; };
+		45A0DA4B1A66B165000B45E9 /* PPRFavoritesViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45A0DA491A66B165000B45E9 /* PPRFavoritesViewCell.xib */; };
+		45A0DA4D1A66B4D3000B45E9 /* backgroundFavoriteCell.png in Resources */ = {isa = PBXBuildFile; fileRef = 45A0DA4C1A66B4D3000B45E9 /* backgroundFavoriteCell.png */; };
 		45C64EC31A4977AE000A55A6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 45C64EC21A4977AE000A55A6 /* main.m */; };
 		45C64EC61A4977AE000A55A6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 45C64EC51A4977AE000A55A6 /* AppDelegate.m */; };
 		45C64EC91A4977AE000A55A6 /* PPRLiveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45C64EC81A4977AE000A55A6 /* PPRLiveViewController.m */; };
@@ -154,6 +162,18 @@
 		456714B01A52BD0000890C1E /* pepperFlower.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pepperFlower.png; sourceTree = "<group>"; };
 		458DE6A21A55FBB400280C93 /* example1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = example1.png; sourceTree = "<group>"; };
 		458DE6A31A55FBB400280C93 /* example2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = example2.png; sourceTree = "<group>"; };
+		45A0DA3A1A66A371000B45E9 /* Pepper966.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Pepper966.xcdatamodel; sourceTree = "<group>"; };
+		45A0DA3C1A66A403000B45E9 /* Favorites.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Favorites.h; sourceTree = "<group>"; };
+		45A0DA3D1A66A403000B45E9 /* Favorites.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Favorites.m; sourceTree = "<group>"; };
+		45A0DA3F1A66A446000B45E9 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		45A0DA411A66A69D000B45E9 /* FavoritesStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoritesStore.h; sourceTree = "<group>"; };
+		45A0DA421A66A69D000B45E9 /* FavoritesStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoritesStore.m; sourceTree = "<group>"; };
+		45A0DA441A66B059000B45E9 /* PPRFavoritesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPRFavoritesTableViewController.h; sourceTree = "<group>"; };
+		45A0DA451A66B059000B45E9 /* PPRFavoritesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPRFavoritesTableViewController.m; sourceTree = "<group>"; };
+		45A0DA471A66B165000B45E9 /* PPRFavoritesViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPRFavoritesViewCell.h; sourceTree = "<group>"; };
+		45A0DA481A66B165000B45E9 /* PPRFavoritesViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPRFavoritesViewCell.m; sourceTree = "<group>"; };
+		45A0DA491A66B165000B45E9 /* PPRFavoritesViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PPRFavoritesViewCell.xib; sourceTree = "<group>"; };
+		45A0DA4C1A66B4D3000B45E9 /* backgroundFavoriteCell.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backgroundFavoriteCell.png; sourceTree = "<group>"; };
 		45C64EBD1A4977AE000A55A6 /* Pepper966.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pepper966.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		45C64EC11A4977AE000A55A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		45C64EC21A4977AE000A55A6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -246,6 +266,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45A0DA401A66A446000B45E9 /* CoreData.framework in Frameworks */,
 				451C1D571A655817007F75D5 /* Social.framework in Frameworks */,
 				45C64F411A4A12B8000A55A6 /* UIKit.framework in Frameworks */,
 				45C64F4A1A4A1944000A55A6 /* libxml2.dylib in Frameworks */,
@@ -289,6 +310,7 @@
 		451C1B561A6511B7007F75D5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				45A0DA3F1A66A446000B45E9 /* CoreData.framework */,
 				451C1D561A655817007F75D5 /* Social.framework */,
 				451C1D361A651495007F75D5 /* Bolts.framework */,
 				451C1D371A651495007F75D5 /* FacebookSDK.framework */,
@@ -305,6 +327,7 @@
 		456714961A516C9F00890C1E /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				45A0DA4C1A66B4D3000B45E9 /* backgroundFavoriteCell.png */,
 				451C1D4F1A6546A4007F75D5 /* trackhistory.png */,
 				451C1D501A6546A4007F75D5 /* trackhistory@2x.png */,
 				451C1D481A65264E007F75D5 /* Icon.png */,
@@ -346,6 +369,7 @@
 		45C64EB41A4977AE000A55A6 = {
 			isa = PBXGroup;
 			children = (
+				45A0DA391A66A371000B45E9 /* Pepper966.xcdatamodeld */,
 				451C1B561A6511B7007F75D5 /* Frameworks */,
 				456714961A516C9F00890C1E /* Images */,
 				45C64F491A4A1944000A55A6 /* libxml2.dylib */,
@@ -476,6 +500,10 @@
 				456714AA1A519DDF00890C1E /* PPRTrackInfo.m */,
 				45CF6AAB1A5EFDF400C06015 /* PPRTracklistParser.h */,
 				45CF6AAC1A5EFDF400C06015 /* PPRTracklistParser.m */,
+				45A0DA3C1A66A403000B45E9 /* Favorites.h */,
+				45A0DA3D1A66A403000B45E9 /* Favorites.m */,
+				45A0DA411A66A69D000B45E9 /* FavoritesStore.h */,
+				45A0DA421A66A69D000B45E9 /* FavoritesStore.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -502,6 +530,8 @@
 				45CF6A9C1A5EC39B00C06015 /* PPRMainController.m */,
 				45CF6AA21A5EF83000C06015 /* PPRTracklistTableViewController.h */,
 				45CF6AA31A5EF83000C06015 /* PPRTracklistTableViewController.m */,
+				45A0DA441A66B059000B45E9 /* PPRFavoritesTableViewController.h */,
+				45A0DA451A66B059000B45E9 /* PPRFavoritesTableViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -514,6 +544,9 @@
 				45CF6AA81A5EF8DC00C06015 /* PPRTrackViewCell.xib */,
 				451C1B3B1A642AB0007F75D5 /* PPRSwipeTableViewCell.h */,
 				451C1B3C1A642AB0007F75D5 /* PPRSwipeTableViewCell.m */,
+				45A0DA471A66B165000B45E9 /* PPRFavoritesViewCell.h */,
+				45A0DA481A66B165000B45E9 /* PPRFavoritesViewCell.m */,
+				45A0DA491A66B165000B45E9 /* PPRFavoritesViewCell.xib */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -625,6 +658,8 @@
 				451C1B3A1A63D34E007F75D5 /* liveIcon@2x.png in Resources */,
 				45CF6A961A5EAA1500C06015 /* liveAbove.png in Resources */,
 				451C1B531A647D73007F75D5 /* twitter@2x.png in Resources */,
+				45A0DA4B1A66B165000B45E9 /* PPRFavoritesViewCell.xib in Resources */,
+				45A0DA4D1A66B4D3000B45E9 /* backgroundFavoriteCell.png in Resources */,
 				45CF6A821A5E993E00C06015 /* selectedTab.png in Resources */,
 				451C1D471A651F9A007F75D5 /* Icon-Spotlight@2x.png in Resources */,
 				45CF6A881A5E9F8700C06015 /* backgroundTab.png in Resources */,
@@ -662,6 +697,7 @@
 				456714AB1A519DDF00890C1E /* PPRTrackInfo.m in Sources */,
 				45C64F221A49AB10000A55A6 /* UIRefreshControl+AFNetworking.m in Sources */,
 				45C64F1E1A49AB10000A55A6 /* UIAlertView+AFNetworking.m in Sources */,
+				45A0DA431A66A69D000B45E9 /* FavoritesStore.m in Sources */,
 				45C64ECC1A4977AE000A55A6 /* SecondViewController.m in Sources */,
 				45C64F171A49AB10000A55A6 /* AFSecurityPolicy.m in Sources */,
 				451C1B4A1A642E9D007F75D5 /* SWLongPressGestureRecognizer.m in Sources */,
@@ -670,13 +706,16 @@
 				45C64F3A1A4A1217000A55A6 /* XPathQuery.m in Sources */,
 				45C64F141A49AB10000A55A6 /* AFHTTPRequestOperationManager.m in Sources */,
 				45CF6AAD1A5EFDF400C06015 /* PPRTracklistParser.m in Sources */,
+				45A0DA4A1A66B165000B45E9 /* PPRFavoritesViewCell.m in Sources */,
 				45C64F181A49AB10000A55A6 /* AFURLConnectionOperation.m in Sources */,
+				45A0DA461A66B059000B45E9 /* PPRFavoritesTableViewController.m in Sources */,
 				45C64F201A49AB10000A55A6 /* UIImageView+AFNetworking.m in Sources */,
 				451C1B481A642E9D007F75D5 /* NSMutableArray+SWUtilityButtons.m in Sources */,
 				45C64F131A49AB10000A55A6 /* AFHTTPRequestOperation.m in Sources */,
 				451C1B3D1A642AB0007F75D5 /* PPRSwipeTableViewCell.m in Sources */,
 				45C64F1D1A49AB10000A55A6 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				45CF6AA91A5EF8DC00C06015 /* PPRTrackViewCell.m in Sources */,
+				45A0DA3B1A66A371000B45E9 /* Pepper966.xcdatamodeld in Sources */,
 				45C64EC91A4977AE000A55A6 /* PPRLiveViewController.m in Sources */,
 				45C64F371A4A1114000A55A6 /* PPRPepperer.m in Sources */,
 				45CF6A9D1A5EC39B00C06015 /* PPRMainController.m in Sources */,
@@ -688,6 +727,7 @@
 				45C64F311A4A0D57000A55A6 /* TFHpple.m in Sources */,
 				45C64F231A49AB10000A55A6 /* UIWebView+AFNetworking.m in Sources */,
 				45C64F1B1A49AB10000A55A6 /* AFURLSessionManager.m in Sources */,
+				45A0DA3E1A66A403000B45E9 /* Favorites.m in Sources */,
 				45C64F1C1A49AB10000A55A6 /* AFNetworkActivityIndicatorManager.m in Sources */,
 				45CF6AA41A5EF83000C06015 /* PPRTracklistTableViewController.m in Sources */,
 				45C64EC31A4977AE000A55A6 /* main.m in Sources */,
@@ -932,6 +972,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		45A0DA391A66A371000B45E9 /* Pepper966.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				45A0DA3A1A66A371000B45E9 /* Pepper966.xcdatamodel */,
+			);
+			currentVersion = 45A0DA3A1A66A371000B45E9 /* Pepper966.xcdatamodel */;
+			path = Pepper966.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 45C64EB51A4977AE000A55A6 /* Project object */;
 }

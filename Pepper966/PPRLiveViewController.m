@@ -148,7 +148,7 @@ UIImageView *trackImg;
                         CGRect frame2 = CGRectMake(screenSizeRight, producerView.frame.origin.y + 20.0, 50.0, 50.0);
                          producerAvatar.frame = frame2;
                      } completion:NULL];
-    producerName = [[UILabel alloc]initWithFrame:CGRectMake(50.0, producerView.frame.origin.y + 35.0, 160.0, 20.0)];
+    producerName = [[UILabel alloc]initWithFrame:CGRectMake(20.0, producerView.frame.origin.y + 35.0, 250.0, 20.0)];
     producerName.text = tempProName;
     producerName.textColor = [UIColor whiteColor];
     producerName.textAlignment = NSTextAlignmentLeft;
@@ -219,15 +219,10 @@ UIImageView *trackImg;
     [trackIndicator startAnimating];
     PPRTrackInfo *trackInfo = [[PPRTrackInfo alloc]init];
     [trackInfo showTrackInfoIsPlaying:mutDict success:^(id jsonObject) {
-        NSLog(@"json object :: %@",jsonObject);
+        
                artistLabel.text = [jsonObject valueForKey:@"artist"];
         trackLabel.text = [jsonObject valueForKey:@"title"];
         trackImg.image = [PPRTrackInfo cdImage];
-       //         NSString *artistNow = [jsonObject valueForKey:@"artist"];
-       //         NSString *titleNow = [jsonObject valueForKey:@"title"];
-       //         [mutDict setObject:artistNow forKey:@"artist"];
-       //         [mutDict setObject:titleNow forKey:@"title"];
-       // [mutDict setObject:trackImg.image forKey:@"image"];
         [trackIndicator stopAnimating];
     } failure:^(NSError *error) {
         NSLog(@"failure or WHAT???");
